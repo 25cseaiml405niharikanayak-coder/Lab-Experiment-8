@@ -1,0 +1,41 @@
+1. WAP for ndarray object, indexing, and string
+2. WAP for data types and structures in numpy
+3. WAP for Numpy array properties and functions
+4. WAP for statistical operations and broadcasting on arrays
+5. WAP for saving and loading arrays
+6. Scenerio: The smart-farm yield tracker
+you are a data analyst for a smart agriculture company. you are analyzing the daily harvest yield (in kilograms)
+of 4 different crops- tomatoes, carrots, potatoes, and onions- over a 7-days week 
+here is the raw harvest data to provide you 
+Python:
+import numpy as np
+# rows represents crops: [tomatoes, carrots, potatoes, onions]
+# column represents days: [monday, tuesday, wednesday, thursday, friday, saturday, sunday]
+harvest_day = np.array([
+ [50, 55, 60, 52, 58, 65, 70] #Tomatoes
+ [30, 32, 28, 35, 33, 40, 42] #Carrots
+ [100, 95, 105, 110, 98, 120, 125] #Potatoes
+ [40, 38, 42, 45, 41, 50, 55] #Onions
+])
+ your task:
+Part 1: array properties & restructuring
+
+1. Write code to print the shape, number of dimensions(ndim), and total size(total data points) of the harvest_data array.
+
+Part 2: Statistical operation
+3. weekly crop yield: calculate the total yield for each crop for this entire week.
+4. daily average: calculate the average yield across all the crops for each individual day.
+5. Best day: find the maximum yield producted by any single crop an any single day
+
+Part 3: Broadcasting
+6. Fertilizers bonus: due to a new fertilizer used midway through the week the expected yield for all crops on friday, saturday, and sunday increase
+you have a bonus array: daily bonus = np.array(0,0,0,0,5,10,15, represents extra kgs per day)
+yes broadcasting to add this bonus to harvest_data
+
+crop shrinkage(advanced broadcasting):
+during transport, different crops, experience different rates of weight loss shrinkage)
+tomatoes lose 15%, carrots lose 2%, potatoes lose 1% and onion lose 3%
+
+you have a shrinkage factor array:
+shrinkage = np.array(0.95, 0.98, 0.99, 0.97)
+use broadcasting to multiply the currenty harvest data(after the fertiziler bonus) by these shrinkage factors to get final transported weight. 
